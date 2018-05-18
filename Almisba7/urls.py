@@ -7,6 +7,7 @@ from bot.views import (
     )
 
 app_name ='bot_webhooks'
+
 urlpatterns = [
     re_path(r'^<webhook_endpoint>/$', FacebookWebhookView.as_view(), name='webhook'),
 ]
