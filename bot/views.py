@@ -25,7 +25,7 @@ def parse_and_send_fb_message(fbid, recevied_message):
             msg = random.choice(LOGIC_RESPONSES[token])
             break
 
-    msg = answer(token)
+    msg = answer(recevied_message)
 
 
     if msg is not None:                 
