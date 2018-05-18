@@ -1,1 +1,1 @@
-web: gunicorn Almisba7.wsgi
+web: gunicorn misba7.wsgi
