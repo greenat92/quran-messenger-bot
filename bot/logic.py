@@ -3,7 +3,7 @@
 import alfanous
 
 def answer(query):
-    response = alfanous.do(flags={"action":"search", "query":query, "unit": "aya", "highlight": "none"})
+    response = alfanous.do(flags={"action":"search", "query":query, "unit": "aya", "highlight": None, "limit":1})
     if (response["search"]["interval"]["total"]):
          reply = "{" + response["search"]["ayas"][1]["identifier"]["sura_arabic_name"] + " "+ str(response["search"]["ayas"][1]["identifier"]["aya_id"]) + "}";
          reply += "\n{"+ response["search"]["ayas"][1]["aya"]["text"]+"}"
