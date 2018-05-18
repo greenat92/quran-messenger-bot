@@ -30,7 +30,7 @@ def parse_and_send_fb_message(fbid, recevied_message):
             break
 
     if msg is not None:                 
-        endpoint = "{FB_ENDPOINT}/me/messages?access_token={PAGE_ACCESS_TOKEN}"
+        endpoint = "{}/me/messages?access_token={}".format(FB_ENDPOINT,PAGE_ACCESS_TOKEN )
         response_msg = json.dumps({"recipient":{"id":fbid}, "message":{"text":msg}})
         status = requests.post(
             endpoint, 
