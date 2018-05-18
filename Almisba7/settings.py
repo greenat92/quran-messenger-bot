@@ -25,7 +25,7 @@ SECRET_KEY = 'j5c22uc_63#kd*6a_(1bn*2_xhxrj^7=4k89gd%(q&8fv1+382'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['alfanous-bot.herokuapp.com']
 
 
 # Application definition
