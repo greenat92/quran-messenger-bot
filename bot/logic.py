@@ -3,7 +3,7 @@
 import alfanous
 
 def answer(query):
-    response = alfanous.do(flags={"action":"search", "query":query.decode('utf-8'), "unit": "aya", "highlight": None, "limit":1})
+    response = alfanous.do(flags={"action":"search", "query":query, "unit": "aya", "highlight": "none", "limit":1})
 
     print response["error"]
     if (response["search"]["interval"]["total"]):
