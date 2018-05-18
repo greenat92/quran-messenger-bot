@@ -1,4 +1,10 @@
 # bot.logic.py
+
+import alfanous
+
+def answer(token):
+    return alfanous.search(token)["search"]["interval"]["total"]
+
 LOGIC_RESPONSES = {
     'account': [
         "You can find your account information on https://www.codingforentrepreneurs.com/account/"

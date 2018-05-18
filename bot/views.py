@@ -5,8 +5,7 @@ from django.views.generic import View
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
-from .logic import LOGIC_RESPONSES
-
+from .logic import LOGIC_RESPONSES, answer
 
 VERIFY_TOKEN = "1709cefe755becb7d7daa875a93498b98026a6bb33f01e10fa" # generated above
 
@@ -17,9 +16,6 @@ Come from the next step.
 FB_ENDPOINT = 'https://graph.facebook.com/v2.12/'
 PAGE_ACCESS_TOKEN = "EAACq6KqkYcABAE5qLIfYdQy1WrFM15LBt7SSZBHSAmj4HuY2wXWtE64w3DyQJ9ZAaXJ55TPYODu8gbeFUkhfZCOWrTb39CeIeTzqE79Uai8ZCjttZCaClhTCI82tGhmIPEogE2gH84LLpPCQj7PEwzCSlLQ5MVb22MJZAfNW8YMgZDZD"
 
-
-
-
 def parse_and_send_fb_message(fbid, recevied_message):
     # Remove all punctuations, lower case the text and split it based on space
     tokens = re.sub(r"[^a-zA-Z0-9\s]",' ',recevied_message).lower().split()
@@ -28,6 +24,9 @@ def parse_and_send_fb_message(fbid, recevied_message):
         if token in LOGIC_RESPONSES:
             msg = random.choice(LOGIC_RESPONSES[token])
             break
+
+    msg = answer(token)
+
 
     if msg is not None:                 
         endpoint = "{}/me/messages?access_token={}".format(FB_ENDPOINT,PAGE_ACCESS_TOKEN )
