@@ -4,9 +4,9 @@ import alfanous
 
 def answer(query):
     response = alfanous.do(flags={"action":"search", "query":query, "unit": "aya", "highlight": "none", "limit":1})
-
+    print query
     print response["error"]
-    if (response["search"]["interval"]["total"]):
+    if (response["error"]["code"] and response["search"]["interval"]["total"]):
          reply = "{" + response["search"]["ayas"][1]["identifier"]["sura_arabic_name"] + " "+ str(response["search"]["ayas"][1]["identifier"]["aya_id"]) + "}";
          reply += "\n{"+ response["search"]["ayas"][1]["aya"]["text"]+"}"
     else:
