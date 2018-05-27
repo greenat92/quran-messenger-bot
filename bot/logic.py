@@ -6,13 +6,12 @@ def answer(query):
     response = alfanous.do(flags={"action":"search", "query":query, "unit": "aya", "highlight": "none", "limit":3})
     print query.encode('utf-8')
     print response["error"]
+    reply=""
     if (not response["error"]["code"]):
         for i in xrange(1,  min(4, response["search"]["interval"]["total"]+1)):
-             reply = "{" + response["search"]["ayas"][i]["identifier"]["sura_arabic_name"] + " "+ str(response["search"]["ayas"][i]["identifier"]["aya_id"]) + "}"
+             reply += "{" + response["search"]["ayas"][i]["identifier"]["sura_arabic_name"] + " "+ str(response["search"]["ayas"][i]["identifier"]["aya_id"]) + "}"
              reply += "\n"+ response["search"]["ayas"][i]["aya"]["text"]
-             reply += "\n-----\n"
-    else:
-        reply = None
+             reply += "\n\n"
     return reply
 
 LOGIC_RESPONSES = {
