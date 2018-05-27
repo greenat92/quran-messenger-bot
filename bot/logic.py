@@ -8,7 +8,7 @@ def answer(query):
     print response["error"]
     if (not response["error"]["code"] and response["search"]["interval"]["total"]):
          reply = "{" + response["search"]["ayas"][1]["identifier"]["sura_arabic_name"] + " "+ str(response["search"]["ayas"][1]["identifier"]["aya_id"]) + "}";
-         reply += "\n{"+ response["search"]["ayas"][1]["aya"]["text"]+"}"
+         reply += "\n"+ response["search"]["ayas"][1]["aya"]["text"]+""
     else:
         reply = None
     return reply

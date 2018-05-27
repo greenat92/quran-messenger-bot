@@ -14,7 +14,7 @@ FB_ENDPOINT & PAGE_ACCESS_TOKEN
 Come from the next step.
 """
 FB_ENDPOINT = 'https://graph.facebook.com/v2.12/'
-PAGE_ACCESS_TOKEN = "EAACq6KqkYcABAE5qLIfYdQy1WrFM15LBt7SSZBHSAmj4HuY2wXWtE64w3DyQJ9ZAaXJ55TPYODu8gbeFUkhfZCOWrTb39CeIeTzqE79Uai8ZCjttZCaClhTCI82tGhmIPEogE2gH84LLpPCQj7PEwzCSlLQ5MVb22MJZAfNW8YMgZDZD"
+PAGE_ACCESS_TOKEN = "EAAcf47h2im0BABNvguIZBPkKV1RaLx4ATwgT9x6eQELQyo9EMnMhyusimsOWAJ8izc5KDKocDJdM4mbIoZAHj5DdDZA1nfkwv6jEjaKHZB7ZBQv7Nbs8ghzPEpci4tNyoCS6pN4CEUJTpwXHJKjI8t3cVVwFELMLcZBob5ALfqygZDZD"
 
 def parse_and_send_fb_message(fbid, recevied_message):
     # Remove all punctuations, lower case the text and split it based on space
