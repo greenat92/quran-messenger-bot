@@ -3,8 +3,8 @@
 import alfanous
 
 def answer(query):
-    limit = 5
-    response = alfanous.do(flags={"action":"search", "query":query, "unit": "aya", "highlight": "none", "limit": limit})
+    limit = 3
+    response = alfanous.do(flags={"action":"search", "query":query, "unit": "aya", "fuzzy":True, "highlight": "none", "limit": limit})
     print query.encode('utf-8')
     print response["error"]
     reply=""
